@@ -6,6 +6,7 @@ class Player < ActiveRecord::Base
     MIN_PERCENTAGE = GlobalVariables::PercentageByBet::MinPercentage
     MAX_PERCENTAGE = GlobalVariables::PercentageByBet::MaxPercentage
 
+    # Get money bet depend of different conditions
     def get_money_bet(is_rain=false)
         if money <= 1000
             return money        

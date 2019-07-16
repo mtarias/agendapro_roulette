@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  # GET / (main page)
   def index
     @roulette_logs = RouletteLog.all.order("roulette_logs.id DESC")
   end
