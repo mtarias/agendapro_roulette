@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq', '~> 5.0'
 gem 'sidekiq-scheduler'
 
+# Use rest-client for get external API response
+gem 'rest-client'
+
 # Use bootstrap for styles
 gem 'bootstrap-sass'
 

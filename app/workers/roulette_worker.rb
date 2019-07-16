@@ -8,6 +8,9 @@ class RouletteWorker
 
     def perform()
         players = Player.all
+        
+        # Get rain data
+        is_rain = DarkSkyApi.get_rain_data()
 
         # Set roulette color
         roulette_color = Utils.get_random_color()
@@ -17,7 +20,7 @@ class RouletteWorker
         roulette_log = RouletteLog.create(roulette_round: RouletteLog.all.count + 1, roulette_bet: roulette_color)
 
         players.each do |player|
-            player_bet = player.get_money_bet()
+            player_bet = player.get_money_bet(is_rain)
             player_color = Utils.get_random_color()
             puts "JUGADOR #{player.name}, APUESTA: #{player_bet.to_s}, COLOR: #{player_color}"
 
