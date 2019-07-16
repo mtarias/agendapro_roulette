@@ -3,7 +3,9 @@ class RouletteController
     include RouletteHelper
     include PlayerHelper
 
+    # Run roulette called from worker
     def self.run_roulette()
+
         # Get players
         players = Player.all
         
@@ -19,10 +21,13 @@ class RouletteController
 
         # Run roulette for each player
         players.each do |player|
+
+            # Get bet for each player
             player_bet = player.get_money_bet(is_rain)
             player_color = RouletteHelper.get_random_color()
             puts "#{I18n.t(:player, scope: :roulette)} #{player.name}, #{I18n.t(:bet, scope: :roulette)}: #{player_bet.to_s}, #{I18n.t(:color, scope: :roulette)}: #{player_color}"
 
+            # Check result for each player 
             player.money = player.money + PlayerHelper.get_roulette_result(player, player_bet, player_color, roulette_color)
             player.save
 

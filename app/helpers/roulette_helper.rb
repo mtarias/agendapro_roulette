@@ -7,6 +7,7 @@ module RouletteHelper
   GREEN_MIN_PERCENTAGE = GlobalVariables::RoulettePercentage::GreenMinPercentage
   GREEN_MAX_PERCENTAGE = GlobalVariables::RoulettePercentage::GreenMaxPercentage
 
+    # Get probabilistic number depend of the homework pdf
     def self.get_random_color()
         case rand(100) + 1
           when RED_MIN_PERCENTAGE..RED_MAX_PERCENTAGE     then :red

@@ -7,6 +7,7 @@ module PlayerHelper
         }
     end
 
+    # Check player roulette result
     def self.get_roulette_result(player, player_bet, player_color, roulette_color)
         if player_color == roulette_color
           gain = player_bet*gain_by_color[roulette_color]

@@ -4,6 +4,7 @@ class AddMoneyToPlayersWorker
     include Sidekiq::Worker
     sidekiq_options retry: false
 
+    # At midnight add $10.000 to each player
     def perform()
         players = Player.all
 
