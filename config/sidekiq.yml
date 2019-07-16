@@ -1,0 +1,5 @@
+# Worker schedules
+:schedule:
+  roulette:
+    every: '3m'   # Runs once per minute
+    class: RouletteWorker
