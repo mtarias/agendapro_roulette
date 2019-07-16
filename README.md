@@ -36,12 +36,13 @@ Esta aplicación corre una ruleta cada 3 minutos para una cantidad de jugadores
   ```
 
 * Iniciar Sidekiq
+
 Para correr los procesos (workers) en background, correr `sidekiq` en una pestaña aparte
 
 * Iniciar server
-```
-rails s
-```
+   ```
+   rails s
+   ```
 
 ## Controladores:
 
