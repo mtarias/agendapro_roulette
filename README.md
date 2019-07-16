@@ -13,8 +13,8 @@ Esta aplicación corre una ruleta cada 3 minutos para una cantidad de jugadores
 * Crear database
   ```
   psql -U Postgres
-  CREATE USER beetrackuser WITH ENCRYPTED PASSWORD 'beetrack';
-  ALTER USER beetrackuser CREATEDB;
+  CREATE USER agendaprouser WITH ENCRYPTED PASSWORD 'agendapro';
+  ALTER USER agendaprouser CREATEDB;
   ```
 
 * Bajar proyecto de Github y abrir carpeta agendapro_ruleta
