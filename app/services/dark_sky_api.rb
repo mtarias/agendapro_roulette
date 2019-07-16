@@ -1,8 +1,9 @@
 module DarkSkyApi
 
-    API_TOKEN = "f5de17d8f50bb689f6fb4de6e22b65bf"
-    LATITUDE = -33.442855
-    LONGITUDE = -70.650296
+    API_TOKEN = Rails.application.secrets.dark_sky_token
+    LATITUDE = GlobalVariables::DarkSkyData::Latitude
+    LONGITUDE = GlobalVariables::DarkSkyData::Longitude
+    
     API_URL = "https://api.darksky.net/forecast/#{API_TOKEN}/#{LATITUDE},#{LONGITUDE}?exclude=currently,minutely,hourly,alerts"
 
     def self.get_rain_data()
