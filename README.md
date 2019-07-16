@@ -2,13 +2,13 @@
 
 Esta aplicación corre una ruleta cada 3 minutos para una cantidad de jugadores
 
-## Requerimientos de instalación:
+## Requerimientos de instalación
 
 * Ruby version 2.4.0
 * Rails version 4.2.11
 * Postgres version 9.5.14
 
-## Instalación:
+## Instalación
 
 * Crear database
   ```
@@ -44,17 +44,17 @@ Para correr los procesos (workers) en background, correr `sidekiq` en una pesta�
    rails s
    ```
 
-## Controladores:
+## Controladores
 
 * players_controller.rb: Controlador scaffold de las vistas de los jugadores (index, new)
 
 * roulette_controller.rb: Controlador con todo el flujo de la ruleta. Corre acada 3 minutos y es llamado por roulette_worker.rb
 
-## Servicios:
+## Servicios
 
 * dark_sky_api.rb: Servicio que se conecta a DarkSky (API de clima) para detectar lluvia en los próximos días
 
-## Workers:
+## Workers
 
 * add_money_to_players_worker.rb: Worker que corre a medianoche y agrega $10.000 a cada jugador del sistema
 
