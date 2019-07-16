@@ -16,21 +16,22 @@
       <b>Acciones</b>
     </div>
   </div>
-  <% @players.each do |player| %>
-    <div class="row">
-      <div class="col-sm-4">
-        <%= player.name %>
+  <div class="data">
+    <% @players.each do |player| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= player.name %>
+        </div>
+        <div class="col-sm-4">
+          <%= "$#{player.money}" %>
+        </div>
+        <div class="col-sm-4">
+          <%= link_to 'Edit', edit_player_path(player) %>
+          <%= link_to 'Destroy', player, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <%= "$#{player.money}" %>
-      </div>
-      <div class="col-sm-4">
-        <%= link_to 'Edit', edit_player_path(player) %>
-        <%= link_to 'Destroy', player, method: :delete, data: { confirm: '¿Estas seguro?' } %>
-    </div>
-    </div>
-  
-  <% end %>
+    <% end %>
+  </div>
 
   <br>
 
