@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use Sidekiq for background processing
+gem 'sidekiq', '~> 5.0'
+gem 'sidekiq-scheduler'
+
 # Use bootstrap for styles
 gem 'bootstrap-sass'
 
