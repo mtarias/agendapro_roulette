@@ -10,7 +10,7 @@ module PlayerHelper
     def self.get_roulette_result(player, player_bet, player_color, roulette_color)
         if player_color == roulette_color
           gain = player_bet*gain_by_color[roulette_color]
-          puts "JUGADOR #{player.name} HA GANADO #{gain}"
+          puts "#{I18n.t(:player, scope: :roulette)} #{player.name} #{I18n.t(:has_won, scope: :roulette)} #{gain}"
           return gain
         else
           return 0

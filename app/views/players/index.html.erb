@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center">Jugadores</h1>
+<h1 class="text-center"><%= I18n.t(:players, scope: [:views, :players]) %></h1>
 
 <br>
 
 <div class="container text-center" style="width:40%">
   <div class="row">
     <div class="col-sm-4">
-      <b>Nombre Jugador</b>
+      <b><%= I18n.t(:player_name, scope: [:views, :players]) %></b>
     </div>
     <div class="col-sm-4">
-      <b>Dinero Jugador</b>
+      <b><%= I18n.t(:player_money, scope: [:views, :players]) %></b>
     </div>
     <div class="col-sm-4">
-      <b>Acciones</b>
+      <b><%= I18n.t(:actions, scope: [:views, :players]) %></b>
     </div>
   </div>
   <div class="data">
@@ -26,8 +26,8 @@
           <%= "$#{player.money}" %>
         </div>
         <div class="col-sm-4">
-          <%= link_to 'Edit', edit_player_path(player) %>
-          <%= link_to 'Destroy', player, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+          <%= link_to I18n.t(:edit, scope: :helpers), edit_player_path(player) %>
+          <%= link_to I18n.t(:destroy, scope: :helpers), player, method: :delete, data: { confirm: '¿Estas seguro?' } %>
         </div>
       </div>
     <% end %>
@@ -36,11 +36,11 @@
   <br>
 
   <div class="col-md-6 text-center"> 
-      <%= button_to "Nuevo Jugador", new_player_path, 
+      <%= button_to I18n.t(:new_player, scope: [:views, :players]), new_player_path, 
         :class => "inbox-sf-add-btn tip text-center", :method => :get %>
   </div>
   <div class="col-md-6 text-center"> 
-      <%= button_to "Volver a Ruleta", root_path, 
+      <%= button_to I18n.t(:back_to_roulette, scope: [:views, :players]), root_path, 
         :class => "inbox-sf-add-btn tip text-center", :method => :get %>
   </div>
 </div>

@@ -12,7 +12,7 @@ class RouletteController
 
         # Set roulette color
         roulette_color = RouletteHelper.get_random_color()
-        puts "APUESTA RULETA: #{roulette_color}"
+        puts "#{I18n.t(:roulette_bet, scope: :roulette)}: #{roulette_color}"
 
         # Save roulette log
         roulette_log = RouletteLog.create(roulette_round: RouletteLog.all.count + 1, roulette_bet: roulette_color)
@@ -21,12 +21,12 @@ class RouletteController
         players.each do |player|
             player_bet = player.get_money_bet(is_rain)
             player_color = RouletteHelper.get_random_color()
-            puts "JUGADOR #{player.name}, APUESTA: #{player_bet.to_s}, COLOR: #{player_color}"
+            puts "#{I18n.t(:player, scope: :roulette)} #{player.name}, #{I18n.t(:bet, scope: :roulette)}: #{player_bet.to_s}, #{I18n.t(:color, scope: :roulette)}: #{player_color}"
 
             player.money = player.money + PlayerHelper.get_roulette_result(player, player_bet, player_color, roulette_color)
             player.save
 
-            puts "JUGADOR #{player.name}, DINERO: #{player.money}"
+            puts "#{I18n.t(:player, scope: :roulette)} #{player.name}, #{I18n.t(:money, scope: :roulette)}: #{player.money}"
 
             # Save Player Log
             player_log = PlayerLog.create(player_name: player.name, player_money_bet: player_bet, player_color_bet: player_color)
