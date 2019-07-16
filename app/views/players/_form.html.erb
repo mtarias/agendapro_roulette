@@ -1,0 +1,41 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 form-group">
+        <%= f.label :name %>
+      </div>
+      <div class="col-md-6">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1 form-group">
+        <%= f.label :money %>
+      </div>
+      <div class="col-md-6">
+        <%= f.number_field :money %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2 form-group">
+        <%= f.submit %>
+      </div>
+      <div class="col-md-2 form-group">
+        <%= link_to "Volver", players_path, :class => "inbox-sf-add-btn tip text-center" %>
+      </div>
+    </div>
+  </div>
+<% end %>

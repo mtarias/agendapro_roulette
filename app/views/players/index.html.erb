@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Jugadores</h1>
+
+<br>
+
+<div class="container text-center" style="width:40%">
+  <div class="row">
+    <div class="col-sm-4">
+      <b>Nombre Jugador</b>
+    </div>
+    <div class="col-sm-4">
+      <b>Dinero Jugador</b>
+    </div>
+    <div class="col-sm-4">
+      <b>Acciones</b>
+    </div>
+  </div>
+  <% @players.each do |player| %>
+    <div class="row">
+      <div class="col-sm-4">
+        <%= player.name %>
+      </div>
+      <div class="col-sm-4">
+        <%= "$#{player.money}" %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to 'Edit', edit_player_path(player) %>
+        <%= link_to 'Destroy', player, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    </div>
+    </div>
+  
+  <% end %>
+
+  <br>
+
+  <div class="col-md-6 text-center"> 
+      <%= button_to "Nuevo Jugador", new_player_path, 
+        :class => "inbox-sf-add-btn tip text-center", :method => :get %>
+  </div>
+  <div class="col-md-6 text-center"> 
+      <%= button_to "Volver a Ruleta", root_path, 
+        :class => "inbox-sf-add-btn tip text-center", :method => :get %>
+  </div>
+</div>
