@@ -1,0 +1,53 @@
+es:
+  hello: Hola Mundo
+  colors:
+    red: Rojo
+    green: Verde
+    black: Negro
+  messages:
+    player_successfully_created: Jugador creado exitosamente
+    player_successfully_updated: Jugador updateado exitosamente
+    player_successfully_destroyed: Jugador destruido exitosamente
+  roulette:
+    player: JUGADOR
+    money: DINERO
+    bet: APUESTA
+    color: COLOR
+    roulette_bet: APUESTA RULETA
+    has_won: HA GANADO
+  views:
+    application:
+      roulette: Ruleta
+      round: Ronda
+      roulette_bet: Apuesta Ruleta
+      player_name: Nombre Jugador
+      player_bet: Apuesta Jugador
+      player_color_bet: Color Apostado Jugador
+      watch_player_list: Ver Lista de JUgadores
+    players:
+      players: Jugadores
+      player_name: Nombre Jugador
+      player_money: Dinero Jugador
+      actions: Acciones
+      new_player: Nuevo Jugador
+      back_to_roulette: Volver a Ruleta
+  activerecord:
+    models:
+      player: 
+        one: Jugador
+    attributes:
+      player:
+        name: Nombre
+        money: Dinero
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+      new: "Nuevo(a) %{model}"
+    back: Volver
+    edit: Editar
+    destroy: Eliminar
+

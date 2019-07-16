@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">AgendaPro: <%= I18n.t(:roulette, scope: [:views, :application]) %></h1>
+
+<br>
+
+<div class="container text-center" style="width:80%">
+  <div class="row">
+    <div class="col-sm-1">
+      <b><%= I18n.t(:round, scope: [:views, :application]) %></b>
+    </div>
+    <div class="col-sm-2">
+      <b><%= I18n.t(:roulette_bet, scope: [:views, :application]) %></b>
+    </div>
+    <div class="col-sm-9">
+      <div class="col-sm-4">
+        <b><%= I18n.t(:player_name, scope: [:views, :application]) %></b>
+      </div>
+      <div class="col-sm-4">
+        <b><%= I18n.t(:player_bet, scope: [:views, :application]) %></b>
+      </div>
+      <div class="col-sm-4">
+        <b><%= I18n.t(:player_color_bet, scope: [:views, :application]) %></b>
+      </div>
+    </div>
+    
+  </div>
+  <br>
+  <% @roulette_logs.each do |roulette_log| %>
+    <div class="row">
+      <div class="col-sm-1">
+        <%= roulette_log.roulette_round %>
+      </div>
+      <div class="col-sm-2">
+        <%= I18n.t(roulette_log.roulette_bet, scope: :colors) %>
+      </div>
+      <div class="col-sm-9">
+        <% roulette_log.player_logs.each do |player_log| %>
+          <div class="col-sm-4">
+            <%= player_log.player_name %>
+          </div>
+          <div class="col-sm-4">
+            <%= "$#{player_log.player_money_bet}" %>
+          </div>
+          <div class="col-sm-4">
+            <%= I18n.t(player_log.player_color_bet, scope: :colors) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+</div>
+
+<br>
+
+<div class="col-md-12 text-center"> 
+    <%= button_to I18n.t(:watch_player_list, scope: [:views, :application] ), players_path, 
+      :class => "inbox-sf-add-btn tip text-center", :method => :get %>
+</div>

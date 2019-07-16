@@ -21,3 +21,42 @@
 
 en:
   hello: "Hello world"
+  colors:
+    red: Red
+    green: Green
+    black: Black
+  messages:
+    player_successfully_created: 'Player was successfully created.' 
+    player_successfully_updated: 'Player was successfully updated.'
+    player_successfully_destroyed: 'Player was successfully destroyed.'
+  roulette:
+    player: PLAYER
+    money: MONEY
+    bet: BET
+    color: COLOR
+    roulette_bet: ROULETTE BET
+    has_won: HAS WON
+  views:
+    application:
+      roulette: Roulette
+      round: Round
+      roulette_bet: Roulette Bet
+      player_name: Player Name
+      player_bet: Player Bet
+      player_color_bet: Player Color Bet
+      watch_player_list: Watch Player List
+    players:
+      players: Players
+      player_name: Player Name
+      player_money: Player Money
+      actions: Actions
+      new_player: New Player
+      back_to_roulette: Back to Roulette
+  helpers:
+    back: Back
+    edit: Edit
+    destroy: Destroy
+
+
+
+
