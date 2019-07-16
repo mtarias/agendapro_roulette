@@ -3,3 +3,6 @@
   roulette:
     every: '3m'   # Runs once per minute
     class: RouletteWorker
+  add_money_to_players:
+    cron: 0 0 * * *
+    class: AddMoneyToPlayersWorker
