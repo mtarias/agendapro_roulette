@@ -11,27 +11,37 @@ Esta aplicación corre una ruleta cada 3 minutos para una cantidad de jugadores
 ## Instalación:
 
 * Crear database
-  `psql -U Postgres`
-  `CREATE USER beetrackuser WITH ENCRYPTED PASSWORD 'beetrack';`
-  `ALTER USER beetrackuser CREATEDB;`
+  ```
+  psql -U Postgres
+  CREATE USER beetrackuser WITH ENCRYPTED PASSWORD 'beetrack';
+  ALTER USER beetrackuser CREATEDB;
+  ```
 
 * Bajar proyecto de Github y abrir carpeta agendapro_ruleta
 
 * Instalar gemas
-  `bundle install`
+  ```
+  bundle install
+  ```
 
 * Iniciar database
-  `rake db:create`
-  `rake db:migrate`
+  ```
+  rake db:create
+  rake db:migrate
+  ```
 
 * Chequear si los test estan ok
-  `rspec`
+  ```
+  rspec
+  ```
 
 * Iniciar Sidekiq
 Para correr los procesos (workers) en background, correr `sidekiq` en una pestaña aparte
 
 * Iniciar server
-  `rails s`
+```
+rails s
+```
 
 ## Controladores:
 
